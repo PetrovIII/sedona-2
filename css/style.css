@@ -1,0 +1,678 @@
+.visually-hidden {
+    display: none;
+  }
+  
+  :root {
+    --basic-black: #000000;
+    --basic-dark: #333333;
+    --basic-gray: #EEEEEE;
+    --basic-brown: #766357;
+    --basic-blue: #81B3D2;
+    --basic-white: #FFFFFF;
+  
+    --special-gray-1: #F2F2F2;
+    --special-gray-2: #A9A9A9;
+    --special-gray-3: #666666;
+    --special-footer-background: rgba(255, 255, 255, 0.9);
+
+    --special-blue: #669EC0;
+    --special-blue-1: #5496BD;
+
+    --special-brown: #604E43;
+    --special-brown-1: #503E33;
+
+    --special-black: rgba(35, 31, 32, 1);
+
+    --special-app-hover: #EBEBEB;
+    --special-app-border: #E5E5E5;
+
+  }
+  
+  /* Global */
+
+  body {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--basic-dark);
+    text-transform: uppercase;
+    background-color: var(--special-gray-1);
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* тень на подложку? */
+    box-shadow: 0 0 40px 0 #dbdbdb;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  
+  }
+
+  /* Grid */
+
+.page {
+  height: 100%;
+}
+
+.page-body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
+}
+
+
+  /* Main header */
+
+  .main-header {
+    background-color: var(--basic-white); 
+  } 
+
+  /* Main navigation */
+
+  .main-navigation {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: bold;
+    color: var(--basic-black);
+    background-color: transparent;
+    position: relative;
+  }
+
+  .main-header-logo {
+    position: absolute;
+    left: calc(50% - 68px);
+    top: 0;
+  }
+
+  
+  .site-navigation {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    align-items: center;
+    height: 56px;
+  }
+
+  .navigation-right {
+    margin-right: 180px;
+  }
+
+
+  
+  .site-navigation-current a:not([href]) {
+    background-color: var(--basic-white);
+  }
+
+  .site-navigation a {
+    color: var(--basic-black);
+    }
+    
+    .site-navigation a:hover,
+    .site-navigation a:focus{
+    color: var(--basic-blue);
+    }
+
+    .site-navigation a:active{
+      color: var(--basic-black);
+      mix-blend-mode: normal;
+      opacity: 0.3;
+    }
+    
+    .navigation-current {
+      color: var(--basic-brown)
+    }
+
+    .sedona-info {
+      height: 216px;
+      text-align: center;
+      background-color: var(--basic-white);
+    }
+
+    .info-title {
+      font-size: 21px;
+      line-height: 26px;
+      font-weight: bold;
+      color: var(--basic-black);
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 40px;
+
+    }
+
+    .info-text {
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--basic-dark);
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .img-container {
+      background-image: url(../img/sedona_background_1.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+      padding-top: 76px;
+    }
+
+    .img-form {
+      transform: translateY(11%);
+    }
+
+  
+    /* Features */
+   
+
+    .features-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 256px 330px 256px 256px;
+      grid-template-areas: "town img-town img-town"
+                           "housing food souvenirs"
+                           "img-bridge img-bridge bridge"
+                           "space road tourists";  
+    }
+
+    .f-i-town {
+      grid-area: town;
+  }
+  
+  .img-feature-town {
+     grid-area: img-town;    
+  }
+  
+  .f-i-housing {
+       grid-area: housing; 
+  }
+  
+  .f-i-food {
+       grid-area: food; 
+  }
+  
+  .f-i-souvenirs {
+      grid-area: souvenirs; 
+  }
+  
+  .f-i-bridge {
+      grid-area: bridge; 
+  }
+  
+  .img-feature-bridge {
+      grid-area: img-bridge; 
+  }
+  
+  .f-i-space {
+       grid-area: space; 
+  }
+  
+  .f-i-road {
+      grid-area: road; 
+  }
+  
+  .f-i-tourists {
+      grid-area: tourists; 
+  }
+
+  .feature-item-wt {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .feature-item-wt img {
+    order: -1;
+    padding-top: 60px;
+    padding-left: 40%;
+  }
+
+    .feature-item {
+      text-align: center;
+    }
+    
+    .feature-head {
+    text-align: center;
+    }
+
+    .feature-head h4 {
+      font-size: 21px;
+      line-height: 26px;
+      font-weight: bold;
+      color: var(--basic-black);
+    }
+    
+    .feature-head p{
+    line-height: 26px;
+    }
+    
+    .feature-item h3 {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    color: var(--basic-white);
+    }
+    
+    .feature-item-w p{
+    line-height: 21px;
+    color: var(--basic-white);
+    }
+    
+    .feature-item-w {
+    background-color: var(--basic-blue);
+    }
+
+    .feature-item-w span{
+      line-height: 21px;
+      color: var(--basic-white);
+    }
+
+    .feature-item h4 {
+    font-size: 21px;
+    line-height: 21px;
+    font-weight: bold;
+    color: var(--basic-black);
+    }
+    
+    h3 p {
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-white);
+    }
+    
+    .feature-item-g {
+      background-color: var(--basic-gray);
+    }
+
+    .feature-item-wt {
+      background-color: var(--basic-white);
+    }
+
+    
+
+    /* Appointment */
+    
+    .appointment {
+      /* временно увеличу высоту */
+      height: 666px;
+      list-style: none;
+      text-align: center;
+      background-color: var(--basic-white);
+    }
+
+    .appointment h2 {
+      font-weight: bold;
+      font-size: 30px;
+      line-height: 24px;
+      margin: auto;
+      padding-top: 68px;
+    }
+
+    .button-hotel {
+    width: 568px;
+    height: 86px;
+    margin-top: 42px;
+    font: inherit;
+    text-align: center;
+    font-size: 21px;
+    line-height: 26px;
+    color: var(--basic-white);
+    vertical-align: middle;
+    text-transform: uppercase;
+    background-color: var(--basic-brown);
+    border: none;
+    }
+
+    .button-hotel:hover,
+    .button-hotel:focus {
+    background-color: var(--special-brown);
+    }
+    
+    .button-hotel:active {
+      /* как задать затемнение цвета текста при нажатии? */
+      background-color: var(--special-brown-1);
+      border: none;
+       /* в браузере появляется черная граница?? */
+    }
+
+    .form-container {
+      width: 568px;
+      height: 395px;
+      padding-left: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    
+    .appointment h3 {
+      font-size: 21px;
+      line-height: 26px;
+      font-weight: bold;
+      color: var(--basic-white);
+      background-color: var(--basic-brown);
+    }
+    
+    .appointment label{
+      font-size: 14px;
+      line-height: 26px;
+      font-weight: bold;
+    }
+    
+    
+    .appointment-item input {
+      
+      font-size: 14px;
+      line-height: 26px;
+      font-weight: bold;
+      background-color: var(--special-gray-1);
+      border: none;
+    }
+
+    .input-date {
+      width: 346px;
+      height: 38px;
+    }
+
+    .input-count {
+      width: 114px;
+      height: 38px;
+    }
+
+
+    
+    .appointment-item input:hover{
+    background-color: var(--special-app-hover);
+    }
+    
+    .appointment-item input:focus{
+    background-color: var(--basic-white);
+    border: 2px solid var(--special-app-border);
+    }
+    
+    .button-submit {
+      width: 458px;
+      height: 58px;
+      text-align: center;
+      font-size: 21px;
+      line-height: 26px;
+      color: var(--basic-white);
+      vertical-align: middle;
+      text-transform: uppercase;
+      background-color: var(--basic-blue);
+      border: none;
+      margin-left: 55px;
+      }
+  
+      .button-submit:hover,
+      .button-submit:focus {
+      background-color: var(--special-blue);
+      }
+      
+      .button-submit:active {
+        /* как задать затемнение цвета текста при нажатии? */
+        background-color: var(--special-blue-1);
+      }
+
+
+
+      .filters {
+      background-image: url(../img/background_blur.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      }
+
+      .infrastructure {
+        width: 25%
+      }
+
+      .type_l {
+        width: 25%
+      }
+
+      .cost_per_day {
+        width: 50%
+      }
+
+
+    /* Filters */
+
+  
+  
+
+    .filter legend {
+      font-size: 16px;
+      line-height: 21px;
+      font-weight: bold;
+      color: var(--basic-white);
+    }
+
+    .filter ul {
+      list-style: none;
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-white);
+    }
+
+    .range-limit {
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-white);
+    }
+
+    .filter-button {
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-white);
+      background: none;
+    }
+
+    .filter-button:hover,
+    .filter-button:focus  {
+      color: var(--basic-black);
+      background-color: var(--basic-white);
+
+    }
+
+    /* Hotel list */
+
+    .quantity {
+      font-weight: bold;
+      font-size: 21px;
+      line-height: 26px;
+      color: var(--basic-black);
+    }
+
+    .sort {
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--basic-black);
+    }
+
+    .hotels_sort {
+      list-style: none;
+    }
+
+    .sort-type {
+      list-style: none;
+    }
+
+ 
+  
+    .sort_type{ 
+      font-size: 12px;
+      line-height: 18px;
+      color: var(--basic-black);
+      /*mix-blend-mode: normal;
+      opacity: 0.3;
+      не понял, как задать цвет в состоянии покоя и в состоянии активный
+      */
+    }
+
+    .sort_type a:hover,
+    .sort_type a:focus {
+    color: var(--basic-blue);
+    }
+
+    .sort_type a:active {
+      color: var(--basic-black);
+    }
+
+    .hotels_list {
+      list-style: none;
+    }
+
+    .hotel_name {
+      font-weight: bold;
+      font-size: 21px;
+      line-height: 26px;
+      color: var(--basic-black);
+    }
+
+    .hotel_type, .hotel_price {
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-dark);
+    }
+
+    .info_button {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-white);
+      background-color: var(--basic-blue);
+    }
+
+    .info_button:hover,
+    .info_button:focus {
+      background-color: var(--special-blue);
+    }
+
+    .info_button:active {
+      background-color: var(--special-blue-1);
+    }
+
+    .book_button {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--basic-white);
+      background-color: var(--basic-brown);
+    }
+
+    .book_button:hover,
+    .book_button:focus {
+      background-color: var(--special-brown);
+    }
+
+    .book_button:active {
+      background-color: var(--special-brown-1);
+    }
+
+    .hotel_rate {
+      font-size: 14px;
+      line-height: 21px;
+      color: var(--special-gray-3);
+      background-color: var(--special-gray-1);
+    }
+
+    .map {
+      position: relative;
+    }
+
+
+     /* Main footer */
+
+    .main-footer {
+      font-weight: bold;
+      font-size: 21px;
+      line-height: 26px;
+      color: var(--basic-black);
+      position: relative;
+    }
+    
+    .main-footer .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      width: 100%;
+      height: 120px;
+      background-color: var(--special-footer-background); 
+      position: absolute;
+      bottom: 0:
+    }
+
+    .footer-contacts a {
+      font-weight: bold;
+      font-size: 21px;
+      line-height: 26px;
+      color: var(--basic-black);
+      background-color: transparent;
+    }
+
+    
+    .social-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 36px;
+      text-align: center;
+      list-style: none;
+    }
+    
+    /* Social button */
+
+    .social-button {
+      color: inherit; 
+    }
+    
+    .social-button {
+      background-color: var(--basic-blue);  
+      width: 46px;
+      height: 48px;
+      text-align: center;
+    }
+
+    .social-button:hover,
+    .social-button:focus {
+    background-color: var(--special-blue);
+    }
+    
+    .social-button:active {
+      background-color: var(--special-blue-1);
+    }
+    
+    .footer-copyright b {
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 26px;
+      color: var(--basic-black);
+    }
+
+    .footer-copyright .button-copyright:hover,
+    .footer-copyright .button-copyright:focus {
+    color: var(--basic-blue);
+    }
+
+    .footer-copyright .button-copyright:active {
+    color: var(--basic-gray)  
+    }
